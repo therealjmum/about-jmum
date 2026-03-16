@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>jmum</title>
+  <!-- Open Graph / social preview -->
+  <meta property="og:title" content="jmum — Jen Mumford" />
+  <meta property="og:description" content="What it's like to obsess about high performing teams. Partner at a16z." />
+  <meta property="og:image" content="preview.svg" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="jmum — Jen Mumford" />
+  <meta name="twitter:description" content="What it's like to obsess about high performing teams. Partner at a16z." />
+  <meta name="twitter:image" content="preview.svg" />
+  <meta name="twitter:site" content="@therealjmum" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🪵</text></svg>">
+  <style>
+    /* ─── Reset & Base ─────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:      #ffffff;
+      --fg:      #111111;
+      --muted:   #666666;
+      --accent:  #111111;
+      --border:  #e5e5e5;
+      --max-w:   640px;
+      --font:    "Georgia", "Times New Roman", serif;
+      --sans:    -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    }
+
+    html { font-size: 17px; scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: var(--sans);
+      line-height: 1.7;
+      padding: 0 1.5rem;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── Layout ───────────────────────────────────────────────── */
+    .wrap {
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+
+    /* ─── Nav ──────────────────────────────────────────────────── */
+    nav {
+      padding: 3rem 0 2rem;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav .name {
+      font-family: var(--font);
+      font-size: 1.1rem;
+      font-weight: normal;
+      letter-spacing: 0.01em;
+      color: var(--fg);
+      text-decoration: none;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.75rem;
+    }
+
+    nav ul a {
+      font-size: 0.875rem;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      transition: color 0.15s;
+    }
+
+    nav ul a:hover { color: var(--fg); }
+
+    /* ─── Hero ─────────────────────────────────────────────────── */
+    .hero {
+      padding: 5rem 0 4rem;
+    }
+
+    .hero h1 {
+      font-family: var(--font);
+      font-size: 2.25rem;
+      font-weight: normal;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero .tagline {
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.8;
+      white-space: nowrap;
+    }
+
+    /* ─── Sections ─────────────────────────────────────────────── */
+    section {
+      padding: 4rem 0;
+      border-top: 1px solid var(--border);
+    }
+
+    section h2 {
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 2.25rem;
+    }
+
+    /* ─── About ────────────────────────────────────────────────── */
+    .about p {
+      font-size: 1rem;
+      color: var(--fg);
+      line-height: 1.9;
+      margin-bottom: 1.25rem;
+    }
+
+    .about p:last-child { margin-bottom: 0; }
+
+    /* ─── Work / Experience ────────────────────────────────────── */
+    .work-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .work-item {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: baseline;
+      gap: 1rem;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .work-item:first-child { border-top: 1px solid var(--border); }
+
+    .work-left {}
+
+    .work-detail {
+      font-size: 0.825rem;
+      color: var(--muted);
+      margin-top: 0.2rem;
+      line-height: 1.6;
+      display: block;
+    }
+
+    .work-role {
+      font-size: 0.975rem;
+      font-weight: 500;
+      color: var(--fg);
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    .work-company {
+      display: block;
+      font-size: 0.875rem;
+      color: var(--muted);
+      margin-bottom: 0.35rem;
+    }
+
+    .work-year {
+      font-size: 0.8rem;
+      color: var(--muted);
+      white-space: nowrap;
+      letter-spacing: 0.02em;
+    }
+
+    /* ─── Connect ──────────────────────────────────────────────── */
+    .connect-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .connect-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.1rem 0;
+      border-bottom: 1px solid var(--border);
+      text-decoration: none;
+      color: var(--fg);
+      font-size: 0.95rem;
+      transition: color 0.15s;
+    }
+
+    .connect-link:first-child { border-top: 1px solid var(--border); }
+
+    .connect-link:hover { color: var(--muted); }
+
+    .connect-link .arrow {
+      font-size: 0.85rem;
+      color: var(--muted);
+      transition: transform 0.15s, color 0.15s;
+    }
+
+    .connect-link:hover .arrow {
+      transform: translate(3px, -3px);
+      color: var(--fg);
+    }
+
+    /* ─── Footer ───────────────────────────────────────────────── */
+    footer {
+      padding: 3rem 0 3.5rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    footer p {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    /* ─── Responsive ───────────────────────────────────────────── */
+    @media (max-width: 520px) {
+      nav { flex-direction: column; gap: 1.25rem; }
+      nav ul { gap: 1.25rem; }
+      .hero h1 { font-size: 1.75rem; }
+      .work-item { grid-template-columns: 1fr; gap: 0.25rem; }
+      .work-year { margin-top: 0.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrap">
+
+    <!-- Nav -->
+    <nav>
+      <a href="https://www.linkedin.com/in/jennifermumford/" target="_blank" rel="noopener" class="name">jmum</a>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#built">Built</a></li>
+        <li><a href="#connect">Connect</a></li>
+      </ul>
+    </nav>
+
+    <!-- Hero -->
+    <div class="hero">
+      <h1>What it's like to obsess<br>about high performing teams.</h1>
+    </div>
+
+    <!-- About -->
+    <section id="about" class="about">
+      <h2>About</h2>
+      <p>
+        I'm Jen — a candid, driven people leader with a deep belief that the best companies
+        are built on the strength of their teams. Based in NYC, I currently work at
+        Andreessen Horowitz (a16z), where I help portfolio companies
+        think through people strategy at every stage of growth.
+      </p>
+      <p>
+        My career has been spent at the intersection of people, strategy, and operations —
+        working with founders and leaders at early stage companies and/or in fast growing industries.
+      </p>
+      <p>
+        I'm forever curious, currently obsessed with building with AI and love any high intensity exercise.
+      </p>
+    </section>
+
+    <!-- Work -->
+    <section id="work">
+      <h2>Work</h2>
+      <div class="work-list">
+
+        <div class="work-item">
+          <div class="work-left">
+            <span class="work-role">Partner</span>
+            <span class="work-company">Andreessen Horowitz (a16z)</span>
+            <span class="work-detail">Largely AI Infra/Enterprise and Cyber Security</span>
+          </div>
+          <span class="work-year">Present</span>
+        </div>
+
+        <div class="work-item">
+          <div class="work-left">
+            <span class="work-role">VP People</span>
+            <span class="work-company">Fast growing international fintech</span>
+            <span class="work-detail">300 to 1,200 employees · Entered 10 international markets</span>
+          </div>
+          <span class="work-year">Previously</span>
+        </div>
+
+        <div class="work-item">
+          <div class="work-left">
+            <span class="work-role">Head of People</span>
+            <span class="work-company">Enterprise data sharing start-up</span>
+            <span class="work-detail">First HR hire · Member of exec team</span>
+            <span class="work-detail">~50 employees across AUS, SG & US</span>
+          </div>
+          <span class="work-year">Previously</span>
+        </div>
+
+        <div class="work-item">
+          <div class="work-left">
+            <span class="work-role">Director of People & Culture</span>
+            <span class="work-company">PLG SaaS / workplace safety & IoT</span>
+            <span class="work-detail">First HR hire</span>
+            <span class="work-detail">50 to 400 employees across AU, PHL, UK & US</span>
+          </div>
+          <span class="work-year">Previously</span>
+        </div>
+
+        <div class="work-item">
+          <div class="work-left">
+            <span class="work-role">Senior Consultant</span>
+            <span class="work-company">Deloitte Consulting</span>
+            <span class="work-detail">Led teams across APAC and North America</span>
+          </div>
+          <span class="work-year">Previously</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Built -->
+    <section id="built">
+      <h2>Recent things I've built</h2>
+      <div class="connect-links">
+
+        <a class="connect-link" href="https://therealjmum.github.io/AI-for-HR/" target="_blank" rel="noopener">
+          <span>AI for HR</span>
+          <span class="arrow">↗</span>
+        </a>
+
+        <a class="connect-link" href="https://therealjmum.github.io/time-to-play-ai/" target="_blank" rel="noopener">
+          <span>Where to start with AI</span>
+          <span class="arrow">↗</span>
+        </a>
+
+        <a class="connect-link" href="https://therealjmum.github.io/comp-calc/" target="_blank" rel="noopener">
+          <span>Total comp statement calculator</span>
+          <span class="arrow">↗</span>
+        </a>
+
+        <a class="connect-link" href="https://therealjmum.github.io/org-intelligence/" target="_blank" rel="noopener">
+          <span>Example AI augmented org design</span>
+          <span class="arrow">↗</span>
+        </a>
+
+        <a class="connect-link" href="https://therealjmum.github.io/people-resources/" target="_blank" rel="noopener">
+          <span>Some of my favorite people reads</span>
+          <span class="arrow">↗</span>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- Connect -->
+    <section id="connect">
+      <h2>Connect</h2>
+      <div class="connect-links">
+
+        <a class="connect-link" href="https://www.linkedin.com/in/jennifermumford/" target="_blank" rel="noopener">
+          <span>LinkedIn</span>
+          <span class="arrow">↗</span>
+        </a>
+
+        <a class="connect-link" href="https://x.com/therealjmum" target="_blank" rel="noopener">
+          <span>X / Twitter</span>
+          <span class="arrow">↗</span>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>jmum</p>
+      <p>© 2026</p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
